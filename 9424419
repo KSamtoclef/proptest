@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Redirect</title>
+	<noscript>
+		<meta id="meta-refresh" http-equiv="refresh" content="1; url=https://www.google.com"/>
+	</noscript>
+	<meta name="referrer" content="never">
+	<link rel="preconnect dns-prefetch" href="https://www.google.com"/>
+
+</head>
+<body>
+<script type="text/javascript">
+
+
+if (window.history) {
+    try {
+        for (var i = 0; i < 3; i++) {
+            
+            var url = "/partitial/5117867?var=9424419&ab2r=0&prfrev=false&rhd=false&sf=1";
+            
+            window.history.pushState(null, document.title, url);
+        }
+    } catch (e) {
+    }
+}
+
+
+function redirect() {
+    
+    
+        window.location.href = "https:\/\/www.google.com";
+    
+}
+redirect();
+</script>
+</body>
+</html>
