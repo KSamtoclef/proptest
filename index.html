@@ -1743,5 +1743,60 @@ location.href='https://omg10.com/4/10846316'
 </div></b></b></div></div></div></center>
 
 
+	function copyRef() {
+  const u = getUser();
+  const link = u ? `${SITE}/?ref=${u.referral_code}` : SITE;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(link)
+      .then(() => showToast('✅ Referral link copied!'))
+      .catch(() => {
+        // Fallback for Android
+        const el = document.createElement('textarea');
+        el.value = link;
+        el.style.position = 'fixed';
+        el.style.opacity = '0';
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        showToast('✅ Referral link copied!');
+      });
+  } else {
+    const el = document.createElement('textarea');
+    el.value = link;
+    el.style.position = 'fixed';
+    el.style.opacity = '0';
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    showToast('✅ Referral link copied!');
+  }
+}
+
+
+	const msg = `🚨 *This is not a joke — read carefully.*
+
+I just got paid ₦${(u?.balance||1000).toLocaleString()} on StudEarn and I'm withdrawing soon 💸
+
+This platform pays Nigerian students real cash for:
+✅ Simple daily tasks (5 minutes)
+✅ Referring friends — ₦1,000 per person
+✅ Daily spin — up to ₦2,500
+✅ School fees support & upkeep cash
+
+I was skeptical at first too. But the money is real and it's going straight to my bank account.
+
+Don't miss this — join free with my link 👇
+${SITE}/?ref=${u?.referral_code||''}
+
+Use my invite code: *${u?.referral_code||''}*
+You get a ₦1,000 bonus just for signing up 🎁
+
+⚠️ This link is personal — share privately only.`;
+
+
+	
+
 <!-- BEGIN: Powered by Supercounters.com -->
 <center><script type="text/javascript" src="//widget.supercounters.com/ssl/online_i.js"></script><script type="text/javascript">sc_online_i(1732829,"ffffff","e61c1c");</script><!-- END: Powered by Supercounters.com -->
